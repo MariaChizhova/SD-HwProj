@@ -46,7 +46,7 @@
 * Преподаватель, добавляющий домашние задания и имеющий возможность посмотреть результаты сделанных дз
 
 ### Диаграмма случаев использования
-![](https://github.com/MariaChizhova/HSE-SD-Roguelike/blob/task01-architecture/images/usecases.jpg)
+![](https://github.com/MariaChizhova/SD-HwProj/blob/task01-architecture/images/usecases.jpg)
 ### Типичные пользователи
 Имя: Олег Монейкен
 Возраст: 20 лет
@@ -67,13 +67,13 @@
 
 ## Композиция (диаграмма компонентов)
 
-![](https://github.com/MariaChizhova/HSE-SD-Roguelike/blob/task01-architecture/images/composition.jpg)
+![](https://github.com/MariaChizhova/SD-HwProj/blob/task01-architecture/images/composition.jpg)
 
 ## ER-диаграмма
 
-![](https://github.com/MariaChizhova/HSE-SD-Roguelike/blob/task01-architecture/images/ERdiagram.jpg)
+![](https://github.com/MariaChizhova/SD-HwProj/blob/task01-architecture/images/ERdiagram.jpg)
 ## Макет
 
-![](https://github.com/MariaChizhova/HSE-SD-Roguelike/blob/task01-architecture/images/student.jpg)
+![](https://github.com/MariaChizhova/SD-HwProj/blob/task01-architecture/images/student.jpg)
 
-![](https://github.com/MariaChizhova/HSE-SD-Roguelike/blob/task01-architecture/images/teacher.jpg)
+![](https://github.com/MariaChizhova/SD-HwProj/blob/task01-architecture/images/teacher.jpg)
