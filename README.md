@@ -72,6 +72,47 @@
 ## ER-диаграмма
 
 ![](https://github.com/MariaChizhova/SD-HwProj/blob/task01-architecture/images/ERdiagram.jpg)
+
+## Логическая структура
+
+![](https://github.com/MariaChizhova/SD-HwProj/blob/task01-architecture/images/architecture.jpg) 
+
+### Main
+
+Класс Controler'a. Отвечает за запуск приложения.
+
+### Api
+
+Интерфейс запроса команд с клиента.
+
+### StudentApi
+
+Класс Controler'a. Отвечает за запросы со стороны студента.
+
+### TeacherApi
+
+Класс Controler'a. Отвечает за запросы со стороны преподавателя.
+
+### DBWorker
+
+Класс Data Access Layer'a. Отвечает за запросы в базу данных.
+
+### Checker
+
+Интерфейс, который реализует проверку Submissions.
+
+### SimpleChecker
+
+Класс, реалтзующий, интерфейс Checker.
+
+### SumissionModel
+
+Класс сервер'a. Отвечает за данные, относящиеся к попытке домашнего задания.
+
+### HomeworkModel
+
+Класс сервер'a. Отвечает за данные, относящиеся к домашнему заданию.
+
 ## Макет
 
 ![](https://github.com/MariaChizhova/SD-HwProj/blob/task01-architecture/images/student.jpg)
