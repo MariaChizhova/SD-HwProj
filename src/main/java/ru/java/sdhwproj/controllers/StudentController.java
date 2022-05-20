@@ -23,9 +23,9 @@ public class StudentController {
         return homeworkService.getAllHomeworks();
     }
 
-    @GetMapping("/submission")
-    public List<Submission> getSubmissions() {
-        return homeworkService.getAllSubmissions();
+    @GetMapping("/submission/{homeworkId}")
+    public List<Submission> getSubmissions(@PathVariable Long homeworkId) {
+        return homeworkService.getAllSubmissions(homeworkId);
     }
 
     @GetMapping("/homework/{id}")
@@ -33,9 +33,9 @@ public class StudentController {
         return homeworkService.getHomeworkById(id);
     }
 
-    @GetMapping("/submission/{id}")
-    public Submission getSubmission(@PathVariable Long id) {
-        return homeworkService.getSubmissionById(id);
+    @GetMapping("/submission/{homeworkId}/{id}")
+    public Submission getSubmission(@PathVariable Long homeworkId, @PathVariable Long id) {
+        return homeworkService.getSubmissionById(homeworkId, id);
     }
 
     @PostMapping("/submission")

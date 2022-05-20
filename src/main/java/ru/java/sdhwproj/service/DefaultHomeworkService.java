@@ -16,7 +16,7 @@ public class DefaultHomeworkService implements HomeworkService {
     }
 
     @Override
-    public Submission getSubmissionById(Long id) {
+    public Submission getSubmissionById(Long homeworkId, Long id) {
         return null;
     }
 
@@ -26,7 +26,7 @@ public class DefaultHomeworkService implements HomeworkService {
     }
 
     @Override
-    public List<Submission> getAllSubmissions() {
+    public List<Submission> getAllSubmissions(Long id) {
         return null;
     }
 
