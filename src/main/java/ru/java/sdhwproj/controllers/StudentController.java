@@ -1,33 +1,45 @@
 package ru.java.sdhwproj.controllers;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import ru.java.sdhwproj.models.Homework;
+import ru.java.sdhwproj.models.Submission;
+import ru.java.sdhwproj.models.SubmissionToDtoMapper;
+import ru.java.sdhwproj.requests.SubmissionRequest;
+import ru.java.sdhwproj.service.HomeworkService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/student")
+@RequiredArgsConstructor
 public class StudentController {
 
+    private final HomeworkService homeworkService;
+    private final SubmissionToDtoMapper mapper;
+
     @GetMapping("/homework")
-    public String getHomeworks() {
-        return "Hello";
+    public List<Homework> getHomeworks() {
+        return homeworkService.getAllHomeworks();
     }
 
     @GetMapping("/submission")
-    public String getSubmissions() {
-        return "Hello";
+    public List<Submission> getSubmissions() {
+        return homeworkService.getAllSubmissions();
     }
 
     @GetMapping("/homework/{id}")
-    public String getHomework(@PathVariable Long id) {
-        return id.toString();
+    public Homework getHomework(@PathVariable Long id) {
+        return homeworkService.getHomeworkById(id);
     }
 
     @GetMapping("/submission/{id}")
-    public String getSubmission(@PathVariable Long id) {
-        return id.toString();
+    public Submission getSubmission(@PathVariable Long id) {
+        return homeworkService.getSubmissionById(id);
     }
 
     @PostMapping("/submission")
-    public void addSubmission() {
-        return;
+    public void addSubmission(@RequestBody SubmissionRequest request) {
+        homeworkService.addSubmission(mapper.AddSubmissionRequestToSubmission(request));
     }
 }
