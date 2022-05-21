@@ -3,20 +3,24 @@ package ru.java.sdhwproj.controllers;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.java.sdhwproj.models.Homework;
+import ru.java.sdhwproj.models.HomeworkToDtoMapper;
 import ru.java.sdhwproj.models.Submission;
 import ru.java.sdhwproj.models.SubmissionToDtoMapper;
+import ru.java.sdhwproj.requests.HomeworkRequest;
 import ru.java.sdhwproj.requests.SubmissionRequest;
 import ru.java.sdhwproj.service.HomeworkService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/student")
+@CrossOrigin(origins = "http://localhost:8080")
+@RequestMapping("/hwproj")
 @RequiredArgsConstructor
-public class StudentController {
+public class HwProjController {
 
     private final HomeworkService homeworkService;
-    private final SubmissionToDtoMapper mapper;
+    private final SubmissionToDtoMapper submissionMapper;
+    private final HomeworkToDtoMapper homeworkMapper;
 
     @GetMapping("/homework")
     public List<Homework> getHomeworks() {
@@ -38,8 +42,13 @@ public class StudentController {
         return homeworkService.getSubmissionById(homeworkId, id);
     }
 
-    @PostMapping("/submission")
+    @PostMapping("/submission/add")
     public void addSubmission(@RequestBody SubmissionRequest request) {
-        homeworkService.addSubmission(mapper.AddSubmissionRequestToSubmission(request));
+        homeworkService.addSubmission(submissionMapper.AddSubmissionRequestToSubmission(request));
+    }
+
+    @PostMapping("/homework/add")
+    public void addHomework(@RequestBody HomeworkRequest request) {
+        homeworkService.addHomework(homeworkMapper.AddHomeworkRequestToHomework(request));
     }
 }
