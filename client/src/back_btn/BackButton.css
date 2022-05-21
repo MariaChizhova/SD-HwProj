@@ -1,0 +1,6 @@
+#back-btn {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    display: flex;
+}

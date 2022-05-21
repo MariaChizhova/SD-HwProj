@@ -1,0 +1,40 @@
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    margin-bottom: 80px;
+}
+
+.submissions {
+    height: 600px;
+    overflow: scroll;
+    margin-bottom: 80px;
+}
+
+.block-s {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    border: 0 solid black;
+    border-left-width: 1px;
+}
+
+.block-s-first {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+}
+
+.submission {
+    border: 1px solid lightblue;
+    height: 35px;
+    margin: 20px 500px 20px 500px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: lightblue;
+}
