@@ -18,12 +18,7 @@ public class SdHwProjApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/hwproj/homework").allowedOrigins("http://localhost:8080");
-				registry.addMapping("/hwproj/submission/{homeworkId}").allowedOrigins("http://localhost:8080");
-				registry.addMapping("/hwproj/homework/{id}").allowedOrigins("http://localhost:8080");
-				registry.addMapping("/hwproj/submission/{homeworkId}/{id}").allowedOrigins("http://localhost:8080");
-				registry.addMapping("/hwproj/submission/add").allowedOrigins("http://localhost:8080");
-				registry.addMapping("/hwproj/homework/add").allowedOrigins("http://localhost:8080");
+				registry.addMapping("/hwproj/**");
 			}
 		};
 	}
