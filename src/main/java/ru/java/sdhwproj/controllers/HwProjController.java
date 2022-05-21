@@ -13,7 +13,6 @@ import ru.java.sdhwproj.service.HomeworkService;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8080")
 @RequestMapping("/hwproj")
 @RequiredArgsConstructor
 public class HwProjController {
@@ -22,9 +21,14 @@ public class HwProjController {
     private final SubmissionToDtoMapper submissionMapper;
     private final HomeworkToDtoMapper homeworkMapper;
 
-    @GetMapping("/homework")
-    public List<Homework> getHomeworks() {
-        return homeworkService.getAllHomeworks();
+    @GetMapping("/homework/student")
+    public List<Homework> getHomeworksForStudent() {
+        return homeworkService.getAllHomeworksForStudent();
+    }
+
+    @GetMapping("/homework/teacher")
+    public List<Homework> getHomeworksForTeacher() {
+        return homeworkService.getAllHomeworksForTeacher();
     }
 
     @GetMapping("/submission/{homeworkId}")

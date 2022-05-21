@@ -1,6 +1,27 @@
 ## Описание ручек
 
-### `/hwproj/homework`
+### `/hwproj/homework/student`
+
+Ручка `GET`. Отдает список всех опубликованных домашних заданий в хронологическом порядке в формате:
+
+```json
+[
+    {
+      "id": 1,
+      "name": "SD-HW",
+      "description": "TO DO",
+      "publication": "2022-05-20T13:45:00.000Z",
+      "deadline": "2022-05-20T23:59:00.000Z"
+    }
+]
+```
+
+Пример curl:
+```shell
+curl -X GET --location "http://localhost:8080/hwproj/homework/student"
+```
+
+### `/hwproj/homework/teacher`
 
 Ручка `GET`. Отдает список всех домашних заданий в хронологическом порядке в формате:
 
@@ -18,7 +39,7 @@
 
 Пример curl:
 ```shell
-curl -X GET --location "http://localhost:8080/hwproj/homework"
+curl -X GET --location "http://localhost:8080/hwproj/homework/teacher"
 ```
 
 ### `/hwproj/submission/{homeworkId}`

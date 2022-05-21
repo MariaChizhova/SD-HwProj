@@ -24,7 +24,12 @@ public class DefaultHomeworkService implements HomeworkService {
     }
 
     @Override
-    public List<Homework> getAllHomeworks() {
+    public List<Homework> getAllHomeworksForStudent() {
+        return getAllHomeworksForTeacher();
+    }
+
+    @Override
+    public List<Homework> getAllHomeworksForTeacher() {
         Timestamp now = new Timestamp(System.currentTimeMillis());
         Homework hw = new Homework(1L, "Instasamka", "Pussy juicy", now, now);
         return List.of(hw);

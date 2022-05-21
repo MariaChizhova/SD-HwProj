@@ -8,7 +8,9 @@ import java.util.List;
 public interface HomeworkService {
     Homework getHomeworkById(Long id);
     Submission getSubmissionById(Long homeworkId, Long id);
-    List<Homework> getAllHomeworks();
+    List<Homework> getAllHomeworksForStudent();
+
+    List<Homework> getAllHomeworksForTeacher();
     List<Submission> getAllSubmissions(Long homeworkId);
     void addHomework(Homework homework);
     void addSubmission(Submission submission);
