@@ -1,3 +1,7 @@
+## Установка RabbitMq
+
+Ссылка на инструкцию: [Download and install](https://www.google.com/url?sa=D&q=https://www.rabbitmq.com/download.html&ust=1653309480000000&usg=AOvVaw0p8QcuMV4dD5cgjELVjGZa&hl=en)
+
 ## Запуск
 
 - Для поднятия локальной бд и накатки миграций таблиц нужно выполнить следующую команду:
