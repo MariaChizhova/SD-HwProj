@@ -3,10 +3,10 @@ package ru.java.sdhwproj.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.java.sdhwproj.dao.HomeworkDao;
+import ru.java.sdhwproj.dao.SubmissionDao;
 import ru.java.sdhwproj.models.Homework;
 import ru.java.sdhwproj.models.Submission;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 @Service
@@ -14,6 +14,7 @@ import java.util.List;
 public class DefaultHomeworkService implements HomeworkService {
 
     private final HomeworkDao homeworkDao;
+    private final SubmissionDao submissionDao;
 
     @Override
     public Homework getHomeworkById(Long id) {
@@ -22,8 +23,7 @@ public class DefaultHomeworkService implements HomeworkService {
 
     @Override
     public Submission getSubmissionById(Long homeworkId, Long id) {
-        Timestamp now = new Timestamp(System.currentTimeMillis());
-        return new Submission(id, homeworkId, now, "Lipsi ha", 10, "Lipsi gimme money ha");
+        return submissionDao.read(homeworkId, id);
     }
 
     @Override
@@ -38,10 +38,8 @@ public class DefaultHomeworkService implements HomeworkService {
     }
 
     @Override
-    public List<Submission> getAllSubmissions(Long id) {
-        Timestamp now = new Timestamp(System.currentTimeMillis());
-        Submission submission = new Submission(1L, id, now, "Lipsi ha", 10, "Lipsi gimme money ha");
-        return List.of(submission);
+    public List<Submission> getAllSubmissions(Long homeworkId) {
+        return submissionDao.readAll(homeworkId);
     }
 
     @Override
@@ -51,6 +49,6 @@ public class DefaultHomeworkService implements HomeworkService {
 
     @Override
     public void addSubmission(Submission submission) {
-
+        submissionDao.create(submission);
     }
 }
