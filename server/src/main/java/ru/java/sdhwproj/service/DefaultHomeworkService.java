@@ -2,6 +2,7 @@ package ru.java.sdhwproj.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.java.sdhwproj.dao.HomeworkDao;
 import ru.java.sdhwproj.models.Homework;
 import ru.java.sdhwproj.models.Submission;
 
@@ -11,10 +12,12 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class DefaultHomeworkService implements HomeworkService {
+
+    private final HomeworkDao homeworkDao;
+
     @Override
     public Homework getHomeworkById(Long id) {
-        Timestamp now = new Timestamp(System.currentTimeMillis());
-        return new Homework(id, "Instasamka", "Pussy juicy", now, now);
+        return homeworkDao.read(id);
     }
 
     @Override
@@ -25,14 +28,13 @@ public class DefaultHomeworkService implements HomeworkService {
 
     @Override
     public List<Homework> getAllHomeworksForStudent() {
-        return getAllHomeworksForTeacher();
+        //todo: filter by date
+        return homeworkDao.readAll();
     }
 
     @Override
     public List<Homework> getAllHomeworksForTeacher() {
-        Timestamp now = new Timestamp(System.currentTimeMillis());
-        Homework hw = new Homework(1L, "Instasamka", "Pussy juicy", now, now);
-        return List.of(hw);
+        return homeworkDao.readAll();
     }
 
     @Override
@@ -44,7 +46,7 @@ public class DefaultHomeworkService implements HomeworkService {
 
     @Override
     public void addHomework(Homework homework) {
-
+        homeworkDao.create(homework);
     }
 
     @Override
