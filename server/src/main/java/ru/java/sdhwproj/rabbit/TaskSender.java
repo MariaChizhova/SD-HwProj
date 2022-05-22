@@ -8,7 +8,7 @@ import java.sql.Timestamp;
 import org.springframework.util.SerializationUtils;
 import ru.java.sdhwproj.models.Submission;
 
-public class Runner {
+public class TaskSender {
     private static final String QUEUE_NAME = "SD-HwProj";
 
     public static void sendTask(Submission submission) throws Exception  {
