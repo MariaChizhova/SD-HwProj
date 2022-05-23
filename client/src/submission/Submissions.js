@@ -6,8 +6,9 @@ import {all_submissions} from "../utils/Api";
 import {withRouter} from "../utils/withRouter";
 import {formatDate} from "../utils/utils";
 
-
-
+/**
+ * Represents the page where the homework submissions are located
+ */
 class Submissions extends React.Component {
 
     constructor(props) {
@@ -17,6 +18,7 @@ class Submissions extends React.Component {
 
     componentDidMount() {
         const params = this.props.params;
+        setInterval(() => all_submissions(params.get('homeworkId'), (d) => this.setState({data: d})), 10000);
         all_submissions(params.get('homeworkId'), (d) => this.setState({data: d}))
     }
 

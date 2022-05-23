@@ -5,6 +5,9 @@ import {withRouter} from "../utils/withRouter";
 import {teacher_homework} from "../utils/Api";
 import { Button } from 'react-bootstrap';
 
+/**
+ * Presents the main page for the teacher
+ */
 class HomeworksTeacher extends React.Component {
 
     constructor(props) {

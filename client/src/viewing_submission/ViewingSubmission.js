@@ -6,6 +6,9 @@ import {formatDate} from "../utils/utils";
 import {withRouter} from "../utils/withRouter";
 import {Form, Row, Col, Card} from "react-bootstrap";
 
+/**
+ * Represents a page where there is a detailed description of the submission
+ */
 class ViewingSubmission extends React.Component {
 
     constructor(props) {

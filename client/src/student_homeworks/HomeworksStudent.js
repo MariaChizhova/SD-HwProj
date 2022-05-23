@@ -4,6 +4,9 @@ import "./Homeworks.css"
 import { student_homework } from "../utils/Api"
 import {formatDate} from "../utils/utils";
 
+/**
+ * Presents the main page for the student
+ */
 class HomeworksStudent extends React.Component {
 
     constructor(props) {
@@ -12,7 +15,8 @@ class HomeworksStudent extends React.Component {
     }
 
     componentDidMount() {
-        student_homework((d) => this.setState({data: d}))
+        setInterval( () => student_homework((d) => this.setState({data: d})), 5000);
+        student_homework((d) => this.setState({data: d}));
     }
 
     render() {

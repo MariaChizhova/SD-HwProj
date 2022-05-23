@@ -2,6 +2,11 @@ import React from "react";
 import {createSearchParams, useNavigate} from "react-router-dom";
 import {formatDate} from "../utils/utils";
 
+/**
+ * Represents a component of one homework for the teacher's home page
+ * @param props
+ * @returns {JSX.Element}
+ */
 function HomeworkTeacher(props) {
 
     const navigate = useNavigate();

@@ -8,7 +8,7 @@ function BackButton() {
 
     const navigate = useNavigate();
     const toBack = () => {
-        navigate(-1);
+        navigate(-1, {replace: true});
     }
 
     return (

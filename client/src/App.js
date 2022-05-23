@@ -8,6 +8,10 @@ import HomeworksTeacher from "./teacher_homeworks/HomeworksTeacher";
 import NewSubmission from "./new_submission/NewSubmission";
 import NewHomework from "./new_homework/NewHomework";
 
+/**
+ * Main class
+ * @returns {JSX.Element}
+ */
 function App() {
     return (
         <BrowserRouter>

@@ -2,7 +2,11 @@ import React from "react";
 import "./Submission.css"
 import {createSearchParams, useNavigate} from "react-router-dom";
 
-
+/**
+ * Represents a component of one submission for the all submissions page
+ * @param props
+ * @returns {JSX.Element}
+ */
 function Submission(props) {
 
     const navigate = useNavigate();

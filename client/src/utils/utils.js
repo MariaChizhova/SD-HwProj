@@ -1,3 +1,8 @@
+/**
+ * Converts time and date to the format "15.03.2022 15:30"
+ * @param time
+ * @returns {string} formatted date
+ */
 export function formatDate(time) {
     if (typeof time !== "string") {
         return 'loading...';

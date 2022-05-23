@@ -2,6 +2,11 @@ import React from "react";
 import "./Homework.css"
 import {createSearchParams, useNavigate} from "react-router-dom";
 
+/**
+ * Represents a component of one homework for the student's home page
+ * @param props
+ * @returns {JSX.Element}
+ */
 function HomeworkStudent(props) {
 
     const navigate = useNavigate();

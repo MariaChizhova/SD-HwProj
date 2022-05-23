@@ -8,6 +8,9 @@ import Col from "react-bootstrap/Col";
 import DateRangePicker from "react-bootstrap-daterangepicker";
 import moment from 'moment';
 
+/**
+ * Presents a page for creating a new homework
+ */
 class NewHomework extends React.Component {
 
     publication = moment();
@@ -32,7 +35,7 @@ class NewHomework extends React.Component {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupDescription">
                         <Form.Label>Description</Form.Label>
-                        <Form.Control id="description" type="text" placeholder="Enter description"/>
+                        <Form.Control id="description" as="textarea" rows={8}/>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupTestingProgram">
                         <Form.Label>Testing program</Form.Label>

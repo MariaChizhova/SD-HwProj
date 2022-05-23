@@ -6,7 +6,9 @@ import {withRouter} from "../utils/withRouter";
 import {formatDate} from "../utils/utils";
 import { InputGroup, FormControl, Button, Card } from 'react-bootstrap';
 
-
+/**
+ * Presents a page for creating a new submission
+ */
 class NewSubmission extends React.Component {
 
     constructor(props) {
@@ -20,9 +22,11 @@ class NewSubmission extends React.Component {
     }
 
     send = () => {
+        const params = this.props.params;
+        const homeworkId = params.get('homeworkId')
         const time = new Date();
         const solution = document.getElementById("link").value;
-        send_new_submission(time, solution);
+        send_new_submission(homeworkId, time, solution);
         this.props.navigate(-1);
     }
 
