@@ -16,12 +16,18 @@ public class SubmissionDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    /*
+    Creates new submission in db
+     */
     public void create(Submission submission) {
         jdbcTemplate.update("INSERT INTO submission(homework, solution, date, mark, comment) VALUES(?, ?, ?, ?, ?)",
                 submission.getHomeworkId(), submission.getSolution(), submission.getTime(),
                 submission.getResult(), submission.getProgramOutput());
     }
 
+    /*
+    Read submission from db by id
+     */
     public Submission read(Long homeworkId, Long submissionId) {
         return jdbcTemplate.queryForObject("SELECT * FROM submission WHERE id = ? AND homework = ?",
                 (rs, rowNum) ->
@@ -35,6 +41,9 @@ public class SubmissionDao {
                         ), submissionId, homeworkId);
     }
 
+    /*
+     Read submissions from db
+     */
     public List<Submission> readAll(Long homeworkId) {
         return jdbcTemplate.query("SELECT * FROM submission  WHERE homework = ?",
                 (rs, rowNum) ->
@@ -46,5 +55,19 @@ public class SubmissionDao {
                                 rs.getInt("mark"),
                                 rs.getString("comment")
                         ), homeworkId);
+    }
+
+    /*
+    Update submission's mark in db
+    */
+    public void updateMark(Long submissionId, Integer mark) {
+        jdbcTemplate.update("UPDATE submission SET mark = ? WHERE id = ?", mark, submissionId);
+    }
+
+    /*
+    Update submission's comment in db
+    */
+    public void updateComment(Long submissionId, String comment) {
+        jdbcTemplate.update("UPDATE submission SET comment = ? WHERE id = ?", comment, submissionId);
     }
 }
