@@ -32,7 +32,7 @@ public class DefaultHomeworkService implements HomeworkService {
     public List<Homework> getAllHomeworksForStudent() {
         Timestamp now = new Timestamp(System.currentTimeMillis());
         return homeworkDao.readAll().stream()
-                .filter(homework -> homework.getPublication().after(now))
+                .filter(homework -> homework.getPublication().before(now))
                 .sorted(Comparator.comparing(Homework::getDeadline))
                 .toList();
     }
