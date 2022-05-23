@@ -9,10 +9,18 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @SpringBootApplication
 public class SdHwProjApplication {
 
+	/**
+	 * Start server
+	 * @param args (unnecessary)
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(SdHwProjApplication.class, args);
 	}
 
+	/**
+	 * Configures CORS rules for web application
+	 * @return
+	 */
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {

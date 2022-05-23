@@ -7,6 +7,8 @@ import ru.java.sdhwproj.dao.SubmissionDao;
 import ru.java.sdhwproj.models.Homework;
 import ru.java.sdhwproj.models.Submission;
 
+import java.sql.Timestamp;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -28,8 +30,11 @@ public class DefaultHomeworkService implements HomeworkService {
 
     @Override
     public List<Homework> getAllHomeworksForStudent() {
-        //todo: filter by date
-        return homeworkDao.readAll();
+        Timestamp now = new Timestamp(System.currentTimeMillis());
+        return homeworkDao.readAll().stream()
+                .filter(homework -> homework.getPublication().after(now))
+                .sorted(Comparator.comparing(Homework::getDeadline))
+                .toList();
     }
 
     @Override
