@@ -4,11 +4,17 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DeliverCallback;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import ru.java.sdhwproj.dao.SubmissionDao;
 import ru.java.sdhwproj.models.Submission;
 import org.springframework.util.SerializationUtils;
 
+@Component
 public class Worker {
     private static final String QUEUE_NAME = "SD-HwProj";
+    @Autowired
+    private static SubmissionDao submissionDao;
 
     public static void main(String[] argv) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
@@ -33,18 +39,15 @@ public class Worker {
                 channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
             }
         };
-        channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> {});
+        channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> {
+        });
     }
+
 
     private static void runProcess(Submission submission) {
         try {
-            // TODO:
-            System.out.println(submission.getId());
-            System.out.println(submission.getHomeworkId());
-            System.out.println(submission.getTime());
-            System.out.println(submission.getSolution());
-            System.out.println(submission.getResult());
-            System.out.println(submission.getProgramOutput());
+            submissionDao.updateMark(submission.getId(), 1);
+            submissionDao.updateComment(submission.getId(), "Good job!");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
