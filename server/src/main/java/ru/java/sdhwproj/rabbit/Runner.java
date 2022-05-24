@@ -11,7 +11,7 @@ import ru.java.sdhwproj.models.Submission;
 import org.springframework.util.SerializationUtils;
 
 @Component
-public class Worker {
+public class Runner {
     private static final String QUEUE_NAME = "SD-HwProj";
     @Autowired
     private static SubmissionDao submissionDao;

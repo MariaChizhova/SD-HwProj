@@ -4,10 +4,12 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.MessageProperties;
-import java.sql.Timestamp;
 import org.springframework.util.SerializationUtils;
 import ru.java.sdhwproj.models.Submission;
 
+/**
+ * Represents class that sends tasks
+ */
 public class TaskSender {
     private static final String QUEUE_NAME = "SD-HwProj";
 
@@ -23,9 +25,4 @@ public class TaskSender {
         }
     }
 
-    public static void main(String[] argv) throws Exception {
-        // TODO: change it
-        Submission submission = new Submission(1L, 1L, new Timestamp(System.currentTimeMillis()), "solution", 1, "output");
-        sendTask(submission);
-    }
 }
