@@ -1,0 +1,29 @@
+.homework {
+    border: 1px solid lightblue;
+    margin: 20px 100px;
+    padding: 0 12px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: lightblue;
+    height: 50px;
+}
+
+.button {
+    background-color: lightblue;
+    border: 0 solid black;
+    border-left-width: 1px;
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.p {
+    padding: 0 10px 0 0;
+    margin: 0;
+}

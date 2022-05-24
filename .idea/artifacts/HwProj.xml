@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="HwProj">
+    <output-path>$PROJECT_DIR$/out/artifacts/HwProj</output-path>
+    <root id="archive" name="HwProj.war" />
+  </artifact>
+</component>

@@ -1,0 +1,63 @@
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    margin: 20px auto;
+    width: 90%;
+    padding: 0 12px;
+    border-radius: 12px;
+}
+
+.dates {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 100px;
+    padding: 0 12px;
+}
+
+.block-ns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.p-ns {
+    font-size: 1.5em;
+    padding: 0 10px 0 0;
+    margin: 0;
+}
+
+#submit {
+    font-size: 1.5em;
+    margin: 40px auto;
+    display: flex;
+}
+
+.input {
+    font-size: 1.3em;
+    width: 85%;
+}
+
+#linkGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    width: 90%;
+}
+
+.dates-numbers {
+    font-size: 1.5em;
+}
+

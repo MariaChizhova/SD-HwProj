@@ -1,0 +1,19 @@
+.new {
+    font-size: 2.5em;
+    display: flex;
+    margin-right: 50px;
+}
+
+.text-th {
+    font-size: 2.5em;
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.header-th {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+}
